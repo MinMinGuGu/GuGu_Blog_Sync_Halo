@@ -1,7 +1,7 @@
 package com.gugumin.halo.config;
 
 import com.dtflys.forest.Forest;
-import com.gugumin.pojo.MetaType;
+import com.gugumin.core.pojo.MetaType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;

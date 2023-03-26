@@ -1,8 +1,9 @@
 package com.gugumin.halo.pojo.response;
 
-import com.gugumin.pojo.Article;
-import com.gugumin.pojo.Meta;
-import com.gugumin.pojo.MetaType;
+
+import com.gugumin.core.pojo.Article;
+import com.gugumin.core.pojo.Meta;
+import com.gugumin.core.pojo.MetaType;
 import lombok.Data;
 
 import java.util.List;
