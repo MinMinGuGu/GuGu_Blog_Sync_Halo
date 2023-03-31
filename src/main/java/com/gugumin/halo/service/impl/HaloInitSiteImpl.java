@@ -48,7 +48,7 @@ public class HaloInitSiteImpl implements IHandlerInitSite {
     public List<Article> getArticles() {
         log.info("开始获取halo站点的所有文章来进行托管");
         List<Integer> idList = getAllPublishedMdId();
-        log.info("成功获取halo站点的所有文章id");
+        log.debug("成功获取halo站点的所有文章id");
         log.debug("getAllPublishedId={}", idList);
         return analyzeArticleList(idList);
     }
