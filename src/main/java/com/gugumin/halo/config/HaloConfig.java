@@ -35,6 +35,11 @@ public class HaloConfig {
         Forest.config().setVariableValue("url", url);
     }
 
+    /**
+     * Gets meta type.
+     *
+     * @return the meta type
+     */
     public MetaType getMetaType() {
         for (MetaType type : MetaType.values()) {
             if (type.getValue().equalsIgnoreCase(metaType)) {

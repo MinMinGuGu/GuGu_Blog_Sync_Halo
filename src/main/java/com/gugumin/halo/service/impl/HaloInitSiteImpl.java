@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Service
-public class HaloSiteImpl implements IHandlerInitSite {
+public class HaloInitSiteImpl implements IHandlerInitSite {
     private static final String DEFAULT_EDITOR_TYPE = "MARKDOWN";
     private static final ExecutorService EXECUTOR_SERVICE = Executors.newCachedThreadPool(r -> new Thread(r, "haloSite-task"));
     @Resource
@@ -41,7 +41,7 @@ public class HaloSiteImpl implements IHandlerInitSite {
 
     @PreDestroy
     private void closer() {
-        EXECUTOR_SERVICE.shutdownNow();
+        EXECUTOR_SERVICE.shutdown();
     }
 
     @Override

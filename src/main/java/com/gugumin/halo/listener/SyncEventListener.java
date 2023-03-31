@@ -34,7 +34,7 @@ import java.util.stream.Collectors;
 public class SyncEventListener {
     private static final Object CATEGORIES_MONITOR = new Object();
     private static final Object TAG_MONITOR = new Object();
-    private static final ExecutorService EXECUTOR_SERVICE = Executors.newCachedThreadPool(r -> new Thread(r, "sync-task"));
+    private static final ExecutorService EXECUTOR_SERVICE = Executors.newCachedThreadPool(r -> new Thread(r, "halo-sync-task"));
     private static final String DEFAULT_EDITOR_TYPE = "MARKDOWN";
     @Resource
     private IHaloApi haloApi;

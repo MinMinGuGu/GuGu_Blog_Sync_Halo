@@ -56,6 +56,7 @@ public class PostsResponse {
     /**
      * To article article.
      *
+     * @param metaType the meta type
      * @return the article
      */
     public Article toArticle(MetaType metaType) {

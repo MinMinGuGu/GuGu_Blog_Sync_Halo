@@ -37,14 +37,21 @@ public class HaloAspect {
     /**
      * Halo site.
      */
-    @Pointcut("execution(* com.gugumin.halo.service.impl.HaloSiteImpl.*(..))")
-    public void haloSite() {
+    @Pointcut("execution(* com.gugumin.halo.service.impl.HaloInitSiteImpl.*(..))")
+    public void initSite() {
+    }
+
+    /**
+     * Access site.
+     */
+    @Pointcut("execution(* com.gugumin.halo.listener.SyncEventListener.*(..))")
+    public void accessSite() {
     }
 
     /**
      * Auth.
      */
-    @Before("haloSite()")
+    @Before("initSite() || accessSite()")
     public void auth() {
         String responseBody = haloApi.login(new AccountRequest(haloConfig.getUsername(), haloConfig.getPassword()));
         String token = JsonPath.read(responseBody, "$.data.access_token").toString();
