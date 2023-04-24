@@ -13,7 +13,6 @@ import net.minidev.json.JSONArray;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
-import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.Collections;
@@ -158,8 +157,7 @@ public class SyncEventListener {
         postsRequest.setTagIds(tagIdList);
         String context = article.getContext();
         postsRequest.setOriginalContent(context);
-        String metaTitle = article.getMeta().getTitle();
-        postsRequest.setTitle(StringUtils.hasText(metaTitle) ? metaTitle : article.getName());
+        postsRequest.setTitle(article.getName());
         postsRequest.setEditorType(DEFAULT_EDITOR_TYPE);
         postsRequest.setStatus(PostsStatus.PUBLISHED.getValue());
         postsRequest.setSummary(article.getMeta().getSummary());
